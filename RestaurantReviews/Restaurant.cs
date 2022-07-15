@@ -22,6 +22,19 @@ class Restaurant
     public int Rating { get; set; }
     public string Description { get; set; }
 
+    // parameterized constructor for setting up initial values
+    public Restaurant(string name, string city, string state, int rating, string description)
+    {
+        this.Name = name;
+        this.City = city;
+        this.State = state;
+        this.Rating = rating;
+        this.Description = description;
+    }
+    public Restaurant()
+    {
+
+    }
     public override string ToString()
     {
         return $"Name: {this.Name} \nAddress: {this.City}, {this.State} \nRating: {this.Rating} / 5 \n{this.Description}";
