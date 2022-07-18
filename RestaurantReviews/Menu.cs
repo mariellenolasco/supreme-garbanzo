@@ -78,16 +78,18 @@ class Menu
         Console.WriteLine("Describe the restaurant: ");
         newRestaurant.Description = Console.ReadLine();
         // print my new restaurant
+        DataAccess.AddRestaurant(newRestaurant);
         Console.WriteLine("New restaurant created! Details below:");
         Console.WriteLine(newRestaurant);
 
-        restaurants.Add(newRestaurant);
     }
     private static void GetRestaurants()
     {
+        // update the restaurant list with values from the db
+        restaurants = DataAccess.GetRestaurants();
         foreach (Restaurant rest in restaurants)
         {
-            Console.WriteLine(rest.Name);
+            Console.WriteLine(rest);
         }
     }
 }
